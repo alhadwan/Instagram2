@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -12,16 +13,50 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" alpha="0.34999999999999998" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC6-rF-hwB">
+                                <rect key="frame" x="81" y="318" width="221" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="1pw-ZQ-ZFE"/>
+                                    <constraint firstAttribute="height" constant="78" id="TWe-3V-Fha"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTAGRAM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQh-Qf-Rkh">
+                                <rect key="frame" x="19" y="221" width="335" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="0vC-lZ-9CV"/>
+                                    <constraint firstAttribute="height" constant="157" id="q4U-ti-5u6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="36"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99505814969999995" blue="0.66969161379999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eQh-Qf-Rkh" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="201" id="39C-eg-ehZ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="cC6-rF-hwB" secondAttribute="bottom" constant="271" id="7d2-Nm-9vM"/>
+                            <constraint firstItem="eQh-Qf-Rkh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="19" id="86W-9D-cWw"/>
+                            <constraint firstAttribute="trailing" secondItem="eQh-Qf-Rkh" secondAttribute="trailing" constant="21" id="BLb-Qe-Bnl"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="eQh-Qf-Rkh" secondAttribute="bottom" constant="289" id="KxS-jm-kZ1"/>
+                            <constraint firstItem="cC6-rF-hwB" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="81" id="TPH-kw-cdq"/>
+                            <constraint firstAttribute="trailing" secondItem="cC6-rF-hwB" secondAttribute="trailing" constant="73" id="j0G-v1-6WY"/>
+                            <constraint firstItem="cC6-rF-hwB" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="298" id="nJl-J7-hL8"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="374.5"/>
         </scene>
     </scenes>
 </document>

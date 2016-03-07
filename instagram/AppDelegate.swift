@@ -7,17 +7,60 @@
 //
 
 import UIKit
+import Parse
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userLogedout", name: LogoutNotificationforUser, object: nil)
+        
+
+        
+        Parse.initializeWithConfiguration(
+            ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "instagram"
+                   configuration.clientKey = "dbvkljbafbujbDBVosvoeF983QHABAFJV"
+                configuration.server = "https://alisnstagram.herokuapp.com/parse"
+            })
+        )
+        let currentUser = PFUser.currentUser()
+
+        if currentUser != nil {
+            print("Current user detected")
+            //change this vc to enable current user logged in feature
+            let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+            // Make the vc the root view controller
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        } else {
+            print("no user found")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+            // Make the vc the root view controller
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        }
+
+        
         // Override point for customization after application launch.
         return true
     }
+    
+    func userLogedout() {
+        //  print("Notification received")
+        let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+        window?.rootViewController = vc
+        print("see you again")
+    }
+    
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
